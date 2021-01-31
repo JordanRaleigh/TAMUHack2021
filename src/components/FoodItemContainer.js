@@ -29,6 +29,7 @@ const FoodItem = (props) => {
       <div className="row">
         <div className="col-8">
           <h4 className="foodItem-name">{props.name}</h4>
+          <p className="foodItem-description">{props.description}</p>
           <div className="foodItem-restaurant">
             <i class="fas fa-store mx-3"></i>
             {props.restaurant}

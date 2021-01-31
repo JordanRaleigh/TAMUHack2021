@@ -21,6 +21,10 @@ code {
   font-size: 1em;
   margin: 1em 1em;
 }
+.foodItem-description {
+  font-size: 0.65em;
+}
+
 .foodItem-restaurant {
   font-size: 0.8em;
   opacity: 80%;
