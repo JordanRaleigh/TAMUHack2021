@@ -6,9 +6,11 @@ function SignUp(props) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [alert, setalert] = useState("");
 
   const handleSubmission = async () => {
-    Client.signup(name, email, password);
+    let res = await Client.signup(name, email, password);
+    if (res) setalert(res);
     // const payload = JSON.stringify({
     //   name: name,
     //   email: email,
@@ -62,6 +64,17 @@ function SignUp(props) {
         }}
         className="form-control my-4"
       />
+      {alert && (
+        <div
+          class={`alert alert-${
+            alert.includes("success") ? "success" : "warning"
+          }`}
+          role="alert"
+        >
+          {alert}
+        </div>
+      )}
+
       <button className="btn btn-primary" onClick={handleSubmission}>
         Sign Up
       </button>

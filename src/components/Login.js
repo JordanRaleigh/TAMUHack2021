@@ -4,6 +4,7 @@ import Client from "../Client";
 const Login = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [alert, setalert] = useState("");
 
   const handleSubmission = async () => {
     // const payload = JSON.stringify({ email: email, password: password });
@@ -22,7 +23,8 @@ const Login = (props) => {
     // } catch (error) {
     //   console.log(error);
     // }
-    Client.login(email, password);
+    let mes = await Client.login(email, password);
+    setalert(mes);
   };
 
   return (
@@ -47,6 +49,11 @@ const Login = (props) => {
           setPassword(e.target.value);
         }}
       />
+      {alert && (
+        <div class={`alert alert-danger`} role="alert">
+          {alert}
+        </div>
+      )}
       <button className="btn btn-secondary" onClick={handleSubmission}>
         Login
       </button>
