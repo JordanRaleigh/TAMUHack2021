@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import Client from "../Client";
-import FoodItemcontainer from "../components/FoodItemContainer";
-import Nav from "../components/Nav";
-import Search from "../components/Search";
+import React, { useState } from 'react';
+import Client from '../Client';
+import FoodItemcontainer from '../components/FoodItemContainer';
+import Nav from '../components/Nav';
+import Search from '../components/Search';
 
 function Home() {
   const [foods, setFoods] = useState([]);
@@ -12,20 +12,14 @@ function Home() {
   };
 
   return (
-    <div className="container d-flex flex-column justify-content-center ">
-      <div className="m-auto p-4">
-        <h1>Welcome to FoodIt</h1>
-        <h2>Interactive menu rating platform.</h2>
-        <h3>
-          Use our search platform to find the best of the best food near you.
-          Our menu rating platform allows users to upvote and downvote items
-          they've tried to allow other users to know exactly what the best items
-          are on the menu and find the best food no matter where you are.
-        </h3>
-        <h3>
-          Our platorm allows resturaunts to go digital, upload their menus, and
-          let the users do the rest.
-        </h3>
+    <div className="container justify-content-center">
+      <div className="align-items-center d-flex flex-column justify-content-center">
+        <h1 className="display-4">Welcome to FoodIt</h1>
+        <h4 className="display-6">Interactive menu rating platform</h4>
+        <h6 className="flex-column text-center">
+          Use our search platform to find the best of the best food near you or
+          login to scan a menu or upvote items yourself!
+        </h6>
       </div>
 
       <Search handleSubmission={handleSubmission} />
