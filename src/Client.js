@@ -83,10 +83,13 @@ class Client {
     });
     try {
       let status = res.status;
-      if (status !== 200) return console.log(await res.text());
+      if (status !== 200) {
+        if (status == 401) window.location.href = "/signin";
+        console.log(await res.text());
+      }
       success(await res.json());
     } catch (error) {
-      alert(error);
+      console.log(error);
     }
   }
 
