@@ -1,10 +1,11 @@
-import logo from './logo.svg';
-import './App.css';
-import Login from './components/Login';
-import SignUp from './components/Signup';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import AuthRoute from './AuthRoute';
-import Home from './pages/Home';
+import logo from "./logo.svg";
+import "./App.css";
+import Login from "./components/Login";
+import SignUp from "./components/Signup";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import AuthRoute from "./AuthRoute";
+import Home from "./pages/Home";
+import Nav from "./components/Nav";
 
 function App() {
   const UserDash = () => {
@@ -14,6 +15,8 @@ function App() {
   return (
     <Router>
       <div>
+        <Nav />
+
         <Switch>
           <Route path="/signin">
             <Login />
