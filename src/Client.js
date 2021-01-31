@@ -71,6 +71,9 @@ class Client {
       let status = res.status;
       if (status !== 200) return console.log(await res.text());
       let data = await res.json();
+      data.sort((b, a) => {
+        return a.upvotes - b.upvotes;
+      });
       setFoods((x) => data);
     } catch (error) {
       console.log(error);
