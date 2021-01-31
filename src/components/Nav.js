@@ -1,5 +1,7 @@
-import React, { Component } from "react";
+import React, { Component, useEffect } from "react";
 import { Link } from "react-router-dom";
+
+import Client from "../Client";
 
 const Nav = (props) => {
   return (
@@ -29,8 +31,17 @@ const Nav = (props) => {
               <li class="nav-link text-capitalize">Restaurants</li>
             </Link>
           </ul>
-          <button class="btn btn-outline-success my-2 my-sm-0 ml-auto">
-            Login/Signup
+          <button
+            class={`btn btn-outline-${
+              Client.isLoggedIn() ? "danger" : "success"
+            } my-2 my-sm-0 ml-auto`}
+            onClick={() => {
+              Client.isLoggedIn()
+                ? Client.logout()
+                : (window.location.href = "/signin");
+            }}
+          >
+            {!Client.isLoggedIn() ? "Login / Sign Up" : "Logout"}
           </button>
         </div>
       </nav>

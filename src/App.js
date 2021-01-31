@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import AuthRoute from "./AuthRoute";
 import Home from "./pages/Home";
 import Nav from "./components/Nav";
+import Signin from "./pages/Signin";
 
 function App() {
   const UserDash = () => {
@@ -16,12 +17,8 @@ function App() {
     <Router>
       <div>
         <Nav />
-
         <Switch>
-          <Route path="/signin">
-            <Login />
-            <SignUp />
-          </Route>
+          <Route path="/signin" component={Signin} />
 
           <Route path="/" exact component={Home} />
 

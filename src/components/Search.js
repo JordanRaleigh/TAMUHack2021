@@ -5,37 +5,7 @@ function Search({ handleSubmission }) {
   const [zipCode, setZipCode] = useState("");
 
   return (
-    <div class="">
-      {/* <input
-        type="search"
-        class="form-control rounded"
-        placeholder="Search"
-        aria-label="Search"
-        aria-describedby="search-addon"
-        value={search}
-        onChange={(e) => {
-          setSearch(e.target.value);
-        }}
-      />
-      <input
-        type="number"
-        class="form-control rounded"
-        placeholder="ZIP Code"
-        aria-label="ZIP Code"
-        aria-describedby="search-addon"
-        value={zipCode}
-        onChange={(e) => {
-          setZipCode(e.target.value);
-        }}
-      />
-      <button
-        type="button"
-        class="btn btn-outline-primary"
-        onClick={handleSubmission}
-      >
-        search
-      </button> */}
-
+    <div class="w-75 mx-auto my-4">
       <div className="input-group">
         <input
           type="text"
@@ -47,7 +17,7 @@ function Search({ handleSubmission }) {
           }}
         />
         <input
-          type="text"
+          type="number"
           placeholder="ZIP Code"
           class="form-control"
           value={zipCode}

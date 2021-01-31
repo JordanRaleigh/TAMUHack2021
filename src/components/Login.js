@@ -1,31 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import Client from "../Client";
 
-const Login = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+const Login = (props) => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleSubmission = async () => {
-    const payload = JSON.stringify({ email: email, password: password });
-
-    let res = await fetch('https://7a8424e98eb3.ngrok.io/api/user/login', {
-      method: 'POST',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-      body: payload,
-    });
-    try {
-      let status = res.status;
-      if (status !== 200) return console.log(await res.text());
-      console.log(await res.text());
-    } catch (error) {
-      console.log(error);
-    }
+    // const payload = JSON.stringify({ email: email, password: password });
+    // let res = await fetch("https://7a8424e98eb3.ngrok.io/api/user/login", {
+    //   method: "POST",
+    //   headers: {
+    //     Accept: "application/json",
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: payload,
+    // });
+    // try {
+    //   let status = res.status;
+    //   if (status !== 200) return console.log(await res.text());
+    //   console.log(await res.text());
+    // } catch (error) {
+    //   console.log(error);
+    // }
+    Client.login(email, password);
   };
 
   return (
-    <div>
+    <div {...props}>
+      <h4>Login</h4>
       <input
         id="email"
         value={email}
@@ -33,16 +35,21 @@ const Login = () => {
         onChange={(e) => {
           setEmail(e.target.value);
         }}
+        className="form-control my-4"
       />
       <input
         id="password"
+        className="form-control  my-4"
         value={password}
         placeholder="Password"
+        type="password"
         onChange={(e) => {
           setPassword(e.target.value);
         }}
       />
-      <button onClick={handleSubmission}>Login</button>
+      <button className="btn btn-secondary" onClick={handleSubmission}>
+        Login
+      </button>
     </div>
   );
 };
