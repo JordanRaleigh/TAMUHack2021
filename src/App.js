@@ -7,10 +7,15 @@ import AuthRoute from "./AuthRoute";
 import Home from "./pages/Home";
 import Nav from "./components/Nav";
 import Signin from "./pages/Signin";
+import WebcamCapture from "./components/WebcamCapture";
 
 function App() {
   const UserDash = () => {
-    return <div>Shh only users allowed</div>;
+    return (
+      <div>
+        <WebcamCapture />
+      </div>
+    );
   };
 
   return (
@@ -22,7 +27,7 @@ function App() {
 
           <Route path="/" exact component={Home} />
 
-          <AuthRoute path="/account" component={UserDash} />
+          <AuthRoute path="/scan" component={UserDash} />
           <Route path="/"></Route>
         </Switch>
       </div>

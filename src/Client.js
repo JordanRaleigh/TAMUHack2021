@@ -18,7 +18,7 @@ class Client {
     });
     try {
       let status = res.status;
-      if (status !== 200) return console.log(await res.text());
+      if (status !== 200) return await res.text();
       console.log(await res.text());
       window.location.href = "/";
     } catch (error) {
@@ -43,8 +43,8 @@ class Client {
     });
     try {
       let status = res.status;
-      if (status !== 200) return alert(await res.text());
-      alert(await res.text());
+      if (status !== 200) return await res.text();
+      return "successfully registered user!";
 
       //   handle logic
 
@@ -83,10 +83,13 @@ class Client {
     });
     try {
       let status = res.status;
-      if (status !== 200) return console.log(await res.text());
+      if (status !== 200) {
+        if (status == 401) window.location.href = "/signin";
+        console.log(await res.text());
+      }
       success(await res.json());
     } catch (error) {
-      alert(error);
+      console.log(error);
     }
   }
 

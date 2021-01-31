@@ -27,8 +27,8 @@ const Nav = (props) => {
             <Link to="/" className="nav-item">
               <li class="nav-link text-capitalize">Food</li>
             </Link>
-            <Link to="/" className="nav-item">
-              <li class="nav-link text-capitalize">Restaurants</li>
+            <Link to="/scan" className="nav-item">
+              <li class="nav-link text-capitalize">Scan</li>
             </Link>
           </ul>
           <button
