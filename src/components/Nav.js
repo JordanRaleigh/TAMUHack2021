@@ -1,14 +1,14 @@
-import React, { Component, useEffect } from "react";
-import { Link } from "react-router-dom";
+import React, { Component, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
-import Client from "../Client";
+import Client from '../Client';
 
 const Nav = (props) => {
   return (
     <div className="div bg-light">
       <nav class="navbar navbar-expand-sm navbar-light bg-light container-fluid w-75">
         <a class="navbar-brand" href="/">
-          Fooditt 🍔
+          FoodIt 🍔
         </a>
         <button
           class="navbar-toggler d-lg-none"
@@ -33,15 +33,15 @@ const Nav = (props) => {
           </ul>
           <button
             class={`btn btn-outline-${
-              Client.isLoggedIn() ? "danger" : "success"
+              Client.isLoggedIn() ? 'danger' : 'success'
             } my-2 my-sm-0 ml-auto`}
             onClick={() => {
               Client.isLoggedIn()
                 ? Client.logout()
-                : (window.location.href = "/signin");
+                : (window.location.href = '/signin');
             }}
           >
-            {!Client.isLoggedIn() ? "Login / Sign Up" : "Logout"}
+            {!Client.isLoggedIn() ? 'Login / Sign Up' : 'Logout'}
           </button>
         </div>
       </nav>
